@@ -37,13 +37,31 @@
         <genericControlBox:ViewModel />
     </Window.DataContext>
     <StackPanel>
-        <genericControl:IntControl />
-        <genericControl:IntControl StringValue="foo" Value="1" />
-        <genericControl:IntControl StringValue="binding" Value="{Binding IntValue}" />
-        <genericControl:IntControl StringValue="binding" Value="{Binding IntValue}" />
-        <genericControl:IntControl StringValue="binding"
+        <GroupBox Header="int">
+            <StackPanel>
+                <genericControl:IntControl />
+                <genericControl:IntControl StringValue="foo" Value="1" />
+                <genericControl:IntControl StringValue="binding" Value="{Binding IntValue}" />
+                <genericControl:IntControl StringValue="binding" Value="{Binding IntValue}" />
+                <genericControl:IntControl StringValue="binding"
                                    Template="{StaticResource GreenTemplate}"
                                    Value="{Binding IntValue}" />
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox Header="double">
+            <StackPanel>
+                <genericControl:DoubleControl />
+                <genericControl:DoubleControl StringValue="foo" Value="1" />
+                <genericControl:DoubleControl StringValue="binding (int)" Value="{Binding IntValue}" />
+                <genericControl:DoubleControl StringValue="binding (int)" Value="{Binding IntValue}" />
+                <genericControl:DoubleControl StringValue="binding (double)" Value="{Binding DoubleValue}" />
+                <genericControl:DoubleControl StringValue="binding (double)" Value="{Binding DoubleValue}" />
+                <genericControl:DoubleControl StringValue="binding"
+                                   Template="{StaticResource GreenTemplate}"
+                                   Value="{Binding DoubleValue}" />
+            </StackPanel>
+        </GroupBox>
     </StackPanel>
 </Window>
 

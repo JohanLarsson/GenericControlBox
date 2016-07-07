@@ -6,6 +6,7 @@
     public class ViewModel : INotifyPropertyChanged
     {
         private int intValue = 2;
+        private double doubleValue = 2.1;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -22,6 +23,21 @@
                 this.OnPropertyChanged();
             }
         }
+
+        public double DoubleValue
+        {
+            get
+            {
+                return this.doubleValue;
+            }
+            set
+            {
+                if (value == this.doubleValue) return;
+                this.doubleValue = value;
+                this.OnPropertyChanged();
+            }
+        }
+
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {

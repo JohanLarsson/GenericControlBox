@@ -47,6 +47,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DoubleControl.cs" />
     <Compile Include="IntControl.cs" />
     <Compile Include="NumberControl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">

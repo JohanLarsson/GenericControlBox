@@ -27,4 +27,5 @@
     </Style>
 
     <Style BasedOn="{StaticResource {x:Type local:NumberControl}}" TargetType="{x:Type local:IntControl}" />
+    <Style BasedOn="{StaticResource {x:Type local:NumberControl}}" TargetType="{x:Type local:DoubleControl}" />
 </ResourceDictionary>
