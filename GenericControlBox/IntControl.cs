@@ -8,7 +8,7 @@
             nameof(Value),
             typeof(int),
             typeof(IntControl),
-            new PropertyMetadata(0));
+            new FrameworkPropertyMetadata(0, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
 
         public new int Value
         {
