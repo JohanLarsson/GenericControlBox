@@ -1,10 +1,10 @@
-﻿namespace GenericControlBox
+﻿namespace GenericControl
 {
     using System;
     using System.Windows;
     using System.Windows.Controls;
 
-    public class NumberControl : Control 
+    public class NumberControl : Control
     {
         public static readonly DependencyProperty StringValueProperty = DependencyProperty.Register(
             nameof(StringValue),
@@ -16,7 +16,7 @@
             "Value",
             typeof(IFormattable),
             typeof(NumberControl),
-            new PropertyMetadata(0));
+            new PropertyMetadata(null, OnValueChanged));
 
         static NumberControl()
         {
@@ -25,14 +25,19 @@
 
         public string StringValue
         {
-            get{ return (string)this.GetValue(StringValueProperty);}
+            get { return (string)this.GetValue(StringValueProperty); }
             set { this.SetValue(StringValueProperty, value); }
         }
 
         internal IFormattable Value
         {
-            get { return (IFormattable)this.GetValue(ValueProperty); }
-            set { this.SetValue(ValueProperty, value); }
+            get { throw new InvalidOperationException("This is just a placeholder and should never be touched."); }
+            set { throw new InvalidOperationException("This is just a placeholder and should never be touched.");}
+        }
+
+        private static void OnValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            throw new InvalidOperationException("Should never change, only shadowing property should be used.");
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace GenericControlBox
+﻿namespace GenericControl
 {
     using System.Windows;
 
